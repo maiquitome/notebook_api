@@ -1,4 +1,4 @@
-defmodule NotebookApi.Notebook.Contact do
+defmodule NotebookApi.Contacts.Contact do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -7,13 +7,15 @@ defmodule NotebookApi.Notebook.Contact do
     field :email, :string
     field :name, :string
 
+    belongs_to :kind, NotebookApi.Kinds.Kind
+
     timestamps()
   end
 
   @doc false
   def changeset(contact, attrs) do
     contact
-    |> cast(attrs, [:name, :email, :birthdate])
-    |> validate_required([:name, :email, :birthdate])
+    |> cast(attrs, [:name, :email, :birthdate, :kind_id])
+    |> validate_required([:name, :email, :birthdate, :kind_id])
   end
 end

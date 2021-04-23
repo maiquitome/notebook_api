@@ -9,6 +9,8 @@ defmodule NotebookApiWeb.Router do
     pipe_through :api
 
     resources "/contacts", ContactController
+
+    resources "/kinds", KindController
   end
 
   # Enables LiveDashboard only for development

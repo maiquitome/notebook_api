@@ -1,12 +1,12 @@
-defmodule NotebookApi.Notebook do
+defmodule NotebookApi.Contacts do
   @moduledoc """
-  The Notebook context.
+  The Contacts context.
   """
 
   import Ecto.Query, warn: false
   alias NotebookApi.Repo
 
-  alias NotebookApi.Notebook.Contact
+  alias NotebookApi.Contacts.Contact
 
   @doc """
   Returns the list of contacts.
